@@ -5,6 +5,7 @@
 set -e
 
 # Build assets using NPM
+npm install
 npm run build
 
 # Clear cache
