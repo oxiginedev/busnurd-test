@@ -13,6 +13,7 @@
                 class="block w-full"
                 type="text"
                 name="name"
+                :value="old('name')"
                 required
                 autofocus
             />
@@ -23,8 +24,13 @@
 
         <div>
             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-            <textarea name="description" id="description" rows="3"
-                class="mt-1 block w-full rounded border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+            <textarea
+                name="description"
+                id="description"
+                :value="old('description')"
+                rows="3"
+                class="mt-1 p-4 block w-full rounded border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            ></textarea>
             @error('description')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
@@ -39,6 +45,7 @@
                 inputmode="numeric"
                 name="price"
                 step="0.01"
+                :value="old('price')"
                 required
             />
             @error('price')

@@ -17,7 +17,7 @@
             <x-navigation-menu />
 
             <!-- Page Content -->
-            <main>
+            <main class="px-4 sm:px-6 lg:px-8">
                 @yield('content')
             </main>
         </div>

@@ -7,12 +7,14 @@ use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController
 {
     public function index(Request $request): View
     {
         $products = Product::query()
+            ->where('user_id', Auth::id())
             ->latest()
             ->simplePaginate(20);
 
@@ -37,6 +39,7 @@ class ProductController
         }
 
         $product = Product::create([
+            'user_id' => Auth::id(),
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'price' => $request->input('price'),
