@@ -17,6 +17,9 @@
                     autofocus
                     autocomplete="name"
                 />
+                @error('name')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="grid gap-2">
@@ -32,6 +35,9 @@
                     autofocus
                     autocomplete="email"
                 />
+                @error('email')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="grid gap-2">
@@ -44,6 +50,9 @@
                     required
                     autocomplete="new-password"
                 />
+                @error('password')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="flex items-center justify-end mt-4">
