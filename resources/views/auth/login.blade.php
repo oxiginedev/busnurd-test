@@ -18,6 +18,9 @@
                     autofocus
                     autocomplete="email"
                 />
+                @error('email')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="grid gap-2">
